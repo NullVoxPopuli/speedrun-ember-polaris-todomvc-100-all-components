@@ -6,4 +6,8 @@ import { service } from '@ember/service';
  */
 export default class Application extends Route {
 	@service repo;
+
+  beforeModel() {
+    return this.repo.load();
+  }
 }
